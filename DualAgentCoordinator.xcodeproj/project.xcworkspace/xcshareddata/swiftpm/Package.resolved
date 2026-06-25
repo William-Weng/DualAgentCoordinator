@@ -1,0 +1,24 @@
+{
+  "originHash" : "34a3e98bbae5d338052c6668bcd6cfec2f4d1331561a82adc058dc990a4677a9",
+  "pins" : [
+    {
+      "identity" : "wwhud",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/William-Weng/WWHUD",
+      "state" : {
+        "revision" : "8ffa449fd2192fdfd06622b77659edd65b4edd18",
+        "version" : "1.6.0"
+      }
+    },
+    {
+      "identity" : "wwsvgimageview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/William-Weng/WWSVGImageView",
+      "state" : {
+        "revision" : "c3118da8460fb998d7436f9912e70cda9a796327",
+        "version" : "1.0.2"
+      }
+    }
+  ],
+  "version" : 3
+}
