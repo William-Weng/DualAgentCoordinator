@@ -20,10 +20,7 @@ final class DualAgentCoordinator {
         self.agentB = agentB
     }
     
-    func runDebate(
-        topic: String,
-        maxTurns: Int = 4
-    ) async throws -> (transcript: [AgentTurn], summary: DebateSummary) {
+    func runDebate(topic: String, maxTurns: Int = 4) async throws -> (transcript: [AgentTurn], summary: DebateSummary) {
         
         var transcript: [AgentTurn] = []
         

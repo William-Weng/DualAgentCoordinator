@@ -47,11 +47,11 @@ final class ViewController: UIViewController {
     @MainActor
     func demoDualAgent() async {
         
-        let coordinator = makeCoordinator()
-        var contents: [String] = []
-        
         WWHUD.shared.display(effect: .gif(url: gif, options: nil), height: 256)
         defer { WWHUD.shared.dismiss() }
+
+        let coordinator = makeCoordinator()
+        var contents: [String] = []
         
         do {
             let result = try await coordinator.runDebate(
@@ -60,10 +60,14 @@ final class ViewController: UIViewController {
             )
             
             for turn in result.transcript {
-                contents.append("[\(turn.agentName)] \(turn.message)\n")
+                
+                let message = "[\(turn.agentName)] \(turn.message)\n"
+                contents.append(message)
+                
+                print(message)
             }
 
-            answerTextView.text = """
+            let summary = """
             
             \(contents.joined())
             
@@ -76,6 +80,8 @@ final class ViewController: UIViewController {
             Risks:
             \(result.summary.unresolvedRisks)
             """
+            
+            answerTextView.text = summary
             
         } catch {
             
